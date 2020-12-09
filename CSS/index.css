@@ -1,0 +1,63 @@
+html{min-height: 100%;}
+
+body{
+	margin: 0;
+	padding: none;
+	min-height: 100%;
+	display: flex;
+	position: relative;
+	background-color: gray;
+	flex-wrap: wrap;
+}
+
+@font-face{
+	src: url('FONT/police1.ttf');
+	font-family: 'police1';
+}
+
+a{text-decoration: none;}
+
+/*HEADER & FOOTER*/
+/*HEADER*************************************/
+header{height: 37vh; width: 100%; text-align: center;}
+
+header a{color: black; font-family: 'police1';}
+header img{width: 30%;}
+header ul{display: flex; justify-content: space-evenly;}
+	header li{list-style: none; width: 20%;}
+		header li:hover{font-size: 0.8em; transition: 0.2s;}
+		
+.liprofil{opacity: 0; position: absolute; z-index: -10;}
+.licommentaire{opacity: 0; position: absolute; z-index: -10;}		
+
+/*FOOTER*************************************/
+footer{height: 7vh; width: 100%; position: absolute; bottom: 0; display: flex;}
+
+footer nav{width: 70%;}
+footer a{color: black;}
+footer img{width: 40%; border-radius: 30px;}
+	footer img:hover{filter: hue-rotate(100deg); transition: 0.5s}
+footer ul{display: flex; justify-content: space-evenly}
+	footer li{list-style: none;}
+		footer li:hover{text-decoration: underline;}
+		
+.network{width: 30%; display: flex; justify-content: space-evenly; margin-left: 5%; align-items: center;}
+
+/*INDEX*/
+.mainindex{width: 100%; display: flex; justify-content: center;}
+
+/*INSCRIPTION*/
+.maininscription{width: 100%; height: 40vh;}
+	.maininscription form{display: flex; flex-direction: column; justify-content: center; align-items: center;}
+		.maininscription label, .maininscription input[type="submit"]{margin-top: 2%;}
+		.maininscription input{width: 15%;}
+		
+
+/*CONNEXION*/
+.mainconnexion{width: 100%; height: 40vh;}
+	.mainconnexion form{display: flex; flex-direction: column; justify-content: center; align-items: center;}
+		.mainconnexion label, .mainconnexion input[type="submit"]{margin-top: 2%;}
+		.mainconnexion input{width: 15%;}
+
+/*PROFIL*/
+/*DISCUSSION*/
