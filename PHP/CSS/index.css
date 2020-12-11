@@ -48,17 +48,27 @@ footer ul{display: flex; justify-content: space-evenly}
 .mainindex{width: 100%; display: flex; justify-content: center;}
 
 /*INSCRIPTION*/
-.maininscription{width: 100%; height: 40vh;}
+.maininscription{width: 100%; height: 40vh; display: flex; justify-content: center; align-items: center; flex-direction: column;}
 	.maininscription form{display: flex; flex-direction: column; justify-content: center; align-items: center;}
 		.maininscription label, .maininscription input[type="submit"]{margin-top: 2%;}
-		.maininscription input{width: 15%;}
+		.maininscription input{width: 100%;}
 		
 
 /*CONNEXION*/
-.mainconnexion{width: 100%; height: 40vh;}
+.mainconnexion{width: 100%; height: 40vh; display: flex; justify-content: center; align-items: center; flex-direction: column;}
 	.mainconnexion form{display: flex; flex-direction: column; justify-content: center; align-items: center;}
 		.mainconnexion label, .mainconnexion input[type="submit"]{margin-top: 2%;}
-		.mainconnexion input{width: 15%;}
+		.mainconnexion input{width: 100%;}
 
 /*PROFIL*/
+.mainprofil{display: flex; flex-direction: column; width: 100%; align-items: center;}
+
 /*DISCUSSION*/
+.maindiscussion{display: flex; flex-direction: column; width: 100%; height: 60vh; align-items: center; justify-content: center;}
+	.maindiscussion form{display: flex; flex-direction: column; height: 20vh; justify-content: space-evenly;}
+		.maindiscussion textarea{width: 20vw; height: 30%;}
+		
+.chat{display: flex; flex-direction: column; background-color: gray; width: 30%; height: 30vh; overflow-y: scroll;}
+	.date{margin-left: 25%;}
+
+

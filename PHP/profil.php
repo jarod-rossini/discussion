@@ -21,7 +21,7 @@
 				<label for="login">Login : </label>
 					<input name="login" type="text" value="<?php echo $_SESSION['login']; ?>"/>&nbsp&nbsp
 				<label for="password">Mot de passe : </label>
-					<input name="password" type="text" value="<?php echo $_SESSION['password']; ?>"/>
+					<input name="password" type="password" value="<?php echo $_SESSION['password']; ?>"/>
 				<input name="change" type="submit" value="modifier"/>
 			</form>
 		</main>
@@ -40,12 +40,12 @@
 	}
 	
 	if(isset($_POST['change'])){
-		$table = $bdd->prepare('UPDATE utilisateurs SET login = "'.$_POST['login'].'", password = "'.$_POST['password'].'"');
+		$table = $bdd->prepare('UPDATE utilisateurs SET login = "'.$_POST['login'].'", password = "'.password_hash($_POST['password'], PASSWORD_DEFAULT).'"');
 		$table->execute();
 		
 		$_SESSION['login'] = $_POST['login'];
 		$_SESSION['password'] = $_POST['password'];
 		
-		header('location: profil.php');
+		header('refresh: 0');
 	}
 ?>

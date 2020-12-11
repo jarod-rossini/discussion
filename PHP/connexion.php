@@ -33,18 +33,20 @@
 		$password_hashed = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	
 		while($ligne = $table->fetch_assoc()){
-		$_SESSION['password'] = $ligne['password'];
+			$_SESSION['password'] = $ligne['password'];
 		}
 		
-		if(mysqli_num_rows($table) == 0 && password_verify($_SESSION['password'], $password_hashed)){
+		if(mysqli_num_rows($table) == 0){
 			$_SESSION['message'] = 'Login ou Mot de passe incorrect';
 			header('refresh: 0');
 		}
-		else{
+		elseif(password_verify($_POST['password'], $_SESSION['password'])){
 			$_SESSION['login'] = $_POST['login'];
 			$_SESSION['header'] = '<style>.liconnexion, .liinscription{position: absolute; z-index: -10; left: 2000px; opacity: 0;} .liprofil, .licommentaire{position: relative; z-index: 1; opacity: 1;}</style>';
+			$_SESSION['password'] = $_POST['password'];
 			
 			header('location: profil.php');
 		}
 	}
+	else{$_SESSION['message'] = '';}
 ?>

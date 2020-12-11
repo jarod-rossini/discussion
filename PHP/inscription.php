@@ -35,7 +35,7 @@
 				$_SESSION['login'] = $_POST['login'];
 				$_SESSION['header'] = '<style>.liinscription, .liconnexion{opacity: 0; position: absolute; z-index: -10; right: -200%;} .liprofil, .licommentaire{opacity: 1; position: relative; z-index: 1;} </style>';
 				
-				$table = $bdd->prepare('INSERT INTO utilisateurs(login, password) VALUES("'.$_POST['login'].'","'.$_SESSION['password'].'")');
+				$table = $bdd->prepare('INSERT INTO utilisateurs(login, password) VALUES("'.$_POST['login'].'","'.password_hash($_POST['password'], PASSWORD_DEFAULT).'")');
 				$table->execute();
 				
 				header('location: profil.php');
@@ -44,6 +44,7 @@
 		}
 		else{header('refresh: 0'); $_SESSION['message'] = 'Les mots de passe ne correspondent pas';}
 	}
+	else{$_SESSION['message'] = '';}
 ?>
 
 
